@@ -2934,27 +2934,286 @@
  * @author 		Olivier Bossel <olivier.bossel@gmail.com>
  */
 /**
- * @name    component
- * description
+ * @name 	SButtonComponent
+ * This file provide the mixins to create buttons
+ */
+.btn, .btn--block {
+  display: inline-block;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0);
+  cursor: pointer;
+  outline-width: 0;
+  -webkit-appearance: none;
+  line-height: 0;
+  text-decoration: none;
+  font-size: 1em;
+  user-select: none;
+}
+
+.btn:not(button):not(input), .btn--block:not(button):not(input) {
+  line-height: 0.9;
+}
+
+button {
+  line-height: 1;
+}
+
+/**
+ * Apply the button css
+ * @param 		{Number} 		[$modifiers=null] 			The modifiers that represent the button you want. Available : {color} outline link
+ * @param 		{Integer}		[$state=null] 				The state of the button you want like. Available : disabled
+ * @author 		Olivier Bossel <olivier.bossel@gmail.com>
+ */
+/**
+ * Apply the button bare css
+ * @param 		{Number} 		[$modifiers=null] 			The modifiers that represent the button you want. Available : {color} outline link
+ * @param 		{Integer}		[$state=null] 				The state of the button you want like. Available : disabled
+ * @author 		Olivier Bossel <olivier.bossel@gmail.com>
+ */
+/**
+ * Apply the button style css
+ * @param 		{Number} 		[$modifiers=null] 			The modifiers that represent the button you want. Available : {color} outline link
+ * @param 		{Integer}		[$state=null] 				The state of the button you want like. Available : disabled
+ * @author 		Olivier Bossel <olivier.bossel@gmail.com>
+ */
+/**
+ * @name 	SButtonComponent Classes
+ * This file provide the mixins to generate button classes
+ */
+/**
+ * Provide all the classes of the button component like .btn, .btn--outline, etc...
+ * - ```.btn```
+ * - ```.btn--{color}```
+ * - ```.btn--outline```
+ * - ```.btn--link```
+ * - ```.btn--block```
+ * @param 		{List<Color>} 		[$colors=default primary secondary] 		The colors to generate
+ * @param 		{List<String>} 		[$types=default outline link block hover disabled] 	 The button types to generate. Available: default outline link block hover disabled
+ * @author 		Olivier Bossel <olivier.bossel@gmail.com>
+ */
+/**
+ * Provide the bare styling for the buttons classes
+ * - ```.btn```
+ * - ```.btn--block```
+ * @param 		{List<String>} 		[$types=default outline link block hover disabled] 	 The button types to generate. Available: default outline link block hover disabled
+ * @author 		Olivier Bossel <olivier.bossel@gmail.com>
+ */
+/**
+ * Provide the style styling for the buttons classes
+ * - ```.button--{color}```
+ * - ```.button--outline```
+ * - ```.button--link```
+ * - ```.button:disabled```
+ * - ```.button--hover-{$color}```
+ * @param 		{List<Color>} 		[$colors=default primary secondary] 		The colors to generate
+ * @param 		{List<String>} 		[$types=default outline link block hover disabled] 	 The button types to generate. Available: default outline link block hover disabled
+ * @author 		Olivier Bossel <olivier.bossel@gmail.com>
+ */
+/**
+ * @name 	SFormComponent
+ * This file provide the mixins and functions to create form elements
+ */
+.form-input, .form-select, .form-textarea, .form-addon {
+  display: inline-block;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 1em;
+}
+
+.form-input, .form-select, .form-textarea, .form-input--primary, .form-select--primary, .form-textarea--primary, .form-input--secondary, .form-select--secondary, .form-textarea--secondary {
+  border-width: 1px;
+  border-style: solid;
+}
+
+.form-input:disabled, .form-select:disabled, .form-textarea:disabled, .form-input--primary:disabled, .form-select--primary:disabled, .form-textarea--primary:disabled, .form-input--secondary:disabled, .form-select--secondary:disabled, .form-textarea--secondary:disabled {
+  cursor: not-allowed;
+}
+
+/**
+ * Set the styling for field sizes like padding, height, etc...
+ * @author 		Olivier Bossel <olivier.bossel@gmail.com>
+ */
+/**
+ * Set the styling for field color like borders
+ * @param 		{Color} 		$color 		The color wanted for the field
+ * @author 		Olivier Bossel <olivier.bossel@gmail.com>
+ */
+/**
+ * Apply the bare and style css for input field (text, email, etc...)
+ * @param 		{Color} 		[$color=default] 		The color wanted for the field
+ * @author 		Olivier Bossel <olivier.bossel@gmail.com>
+ */
+/**
+ * Apply the bare css for input field (text, email, etc...)
+ * @author 		Olivier Bossel <olivier.bossel@gmail.com>
+ */
+/**
+ * Apply the style css for input field (text, email, etc...)
+ * @param 		{Color} 		[$color=default] 		The color wanted for the field
+ * @author 		Olivier Bossel <olivier.bossel@gmail.com>
+ */
+/**
+ * Apply the bare and style css for textarea
+ * @param 		{Color} 		[$color=default] 		The color wanted for the textarea
+ * @author 		Olivier Bossel <olivier.bossel@gmail.com>
+ */
+/**
+ * Set the styling for textarea sizes like padding, etc...
+ * @author 		Olivier Bossel <olivier.bossel@gmail.com>
+ */
+/**
+ * Apply the bare css for textarea
+ * @author 		Olivier Bossel <olivier.bossel@gmail.com>
+ */
+/**
+ * Apply the style css for textarea
+ * @param 		{Color} 		[$color=default] 		The color wanted for the textarea
+ * @author 		Olivier Bossel <olivier.bossel@gmail.com>
+ */
+/**
+* Apply the bare and style css for select
+* @param 		{Color} 		[$color=default] 		The color wanted for the select
+* @author 		Olivier Bossel <olivier.bossel@gmail.com>
+*/
+/**
+ * Set the styling for select colors like background arrow, etc...
+ * @author 		Olivier Bossel <olivier.bossel@gmail.com>
+ */
+/**
+* Apply the bare css for select
+* @author 		Olivier Bossel <olivier.bossel@gmail.com>
+*/
+/**
+* Apply the style css for select
+* @param 		{Color} 		[$color=default] 		The color wanted for the select
+* @author 		Olivier Bossel <olivier.bossel@gmail.com>
+*/
+/**
+* Apply the bare and style css for form group
+* @author 		Olivier Bossel <olivier.bossel@gmail.com>
+*/
+/**
+* Apply the bare css for form group
+* @author 		Olivier Bossel <olivier.bossel@gmail.com>
+*/
+/**
+* Apply the style css for form group
+* @author 		Olivier Bossel <olivier.bossel@gmail.com>
+*/
+/**
+* Apply the bare and style css for form addon
+* @param 		{Color} 		[$color=default] 		The color wanted for the form addon
+* @author 		Olivier Bossel <olivier.bossel@gmail.com>
+*/
+/**
+* Apply the bare css for form group
+* @author 		Olivier Bossel <olivier.bossel@gmail.com>
+*/
+/**
+* Apply the bare and style css for form group
+* @param 		{Color} 		[$color=default] 		The color wanted for the select
+* @author 		Olivier Bossel <olivier.bossel@gmail.com>
+*/
+/**
+ * @name 	SFormComponent Classes
+ * This file provide the mixins to generate form classes
+ */
+/**
+ * Provide all the classes of the form component like .form-input, .form-textarea, etc...
+ * - ```.form-input```
+ * - ```.form-input--{color}```
+ * - ```.form-textarea```
+ * - ```.form-textarea--{color}```
+ * - ```.form-select```
+ * - ```.form-select--{color}```
+ * - ```.form-group````
+ * - ```.form-addon```
+ * - ```.form-addon--{color}```
+ * @param 		{List<Color>} 		[$colors=default primary secondary] 		The colors to generate
+ * @author 		Olivier Bossel <olivier.bossel@gmail.com>
+ */
+/**
+ * Provide all the bare classes of the form component like .form-input, .form-textarea, etc...
+ * - ```.form-input```
+ * - ```.form-textarea```
+ * - ```.form-select```
+ * - ```.form-group````
+ * - ```.form-addon```
+ * @author 		Olivier Bossel <olivier.bossel@gmail.com>
+ */
+/**
+ * Provide all the style classes of the form component like .form-input, .form-textarea, etc...
+ * - ```.form-input```
+ * - ```.form-input--{color}```
+ * - ```.form-textarea```
+ * - ```.form-textarea--{color}```
+ * - ```.form-select```
+ * - ```.form-select--{color}```
+ * - ```.form-group````
+ * - ```.form-addon```
+ * - ```.form-addon--{color}```
+ * @param 		{List<Color>} 		[$colors=default primary secondary] 		The colors to generate
+ * @author 		Olivier Bossel <olivier.bossel@gmail.com>
+ */
+/**
+ * @name    STabsComponent
+ * Create nice and customizable tabs
  *
  * @example   html
- * <!-- example here -->
+ * <ul class="tabs">
+ *   <li class="tabs__item">
+ *     <a href="#tab1" class="active" is="s-activate" group="tabs">
+ *        Tab #1
+ *     </a>
+ *   </li>
+ *   <li class="tabs__item">
+ *     <a href="#tab2" is="s-activate" group="tabs">
+ *       Tab #2
+ *     </a>
+ *   </li>
+ *   <li class="tabs__item">
+ *     <a href="#tab3" is="s-activate" group="tabs">
+ *       Tab #3
+ *     </a>
+ *   </li>
+ *   <li class="tabs__item">
+ *     <a href="#tab4" is="s-activate" group="tabs">
+ *       Tab #4
+ *     </a>
+ *   </li>
+ * </ul>
+ * <div class="tabs__content tf vr" id="tab1">
+ *   <h3>Hello World #1</h3>
+ * </div>
+ * <div class="tabs__content tf vr" id="tab2">
+ *   <h3>Hello World #2</h3>
+ * </div>
+ * <div class="tabs__content tf vr" id="tab3">
+ *   <h3>Hello World #3</h3>
+ * </div>
+ * <div class="tabs__content tf vr" id="tab4">
+ *   <h3>Hello World #4</h3>
+ * </div>
  *
  * @author    Olivier Bossel <olivier.bossel@gmail.com>
  */
 /**
- * Print out the bare and style component css
+ * Print out the menu bare and style component css
  * @param 	{List<Color>} 		[$color=default] 		The color to generate
  */
 /**
- * Print out the bare tabs css
+ * Print out the menu bare tabs css
  */
 /**
- * Print out the style tabs css
+ * Print out the menu style tabs css
  * @param 	{Color} 		[$color=default] 		The color to generate
  */
 /**
- * Print out the bare item and style component css
+ * Print out the bare menu item and style component css
  * @param 	{List<Color>} 		[$color=default] 		The color to generate
  */
 /**
@@ -2962,6 +3221,17 @@
  */
 /**
  * Print out the style tabs item css
+ * @param 	{Color} 		[$color=default] 		The color to generate
+ */
+/**
+ * Print out the bare menu item opaque and style component css
+ * @param 	{List<Color>} 		[$color=default] 		The color to generate
+ */
+/**
+ * Print out the bare tabs item opaque css
+ */
+/**
+ * Print out the style tabs item opaque css
  * @param 	{Color} 		[$color=default] 		The color to generate
  */
 /**
@@ -2976,13 +3246,68 @@
  * @param 	{Color} 		[$color=default] 		The color to generate
  */
 /**
- * @name    component
- * description
+ * Print out the bare content filled and style component css
+ * @param 	{List<Color>} 		[$color=default] 		The color to generate
+ */
+/**
+ * Print out the bare tabs content filled css
+ */
+/**
+ * Print out the style tabs content filled css
+ * @param 	{Color} 		[$color=default] 		The color to generate
+ */
+/**
+ * Print out the bare content opaque and style component css
+ * @param 	{List<Color>} 		[$color=default] 		The color to generate
+ */
+/**
+ * Print out the bare tabs content opaque css
+ */
+/**
+ * Print out the style tabs content opaque css
+ * @param 	{Color} 		[$color=default] 		The color to generate
+ */
+/**
+ * @name    STabsComponent
+ * Create nice and customizable tabs
  *
  * @example   html
- * <!-- example here -->
+ * <ul class="tabs">
+ *   <li class="tabs__item">
+ *     <a href="#tab1" class="active" is="s-activate" group="tabs">
+ *        Tab #1
+ *     </a>
+ *   </li>
+ *   <li class="tabs__item">
+ *     <a href="#tab2" is="s-activate" group="tabs">
+ *       Tab #2
+ *     </a>
+ *   </li>
+ *   <li class="tabs__item">
+ *     <a href="#tab3" is="s-activate" group="tabs">
+ *       Tab #3
+ *     </a>
+ *   </li>
+ *   <li class="tabs__item">
+ *     <a href="#tab4" is="s-activate" group="tabs">
+ *       Tab #4
+ *     </a>
+ *   </li>
+ * </ul>
+ * <div class="tabs__content tf vr" id="tab1">
+ *   <h3>Hello World #1</h3>
+ * </div>
+ * <div class="tabs__content tf vr" id="tab2">
+ *   <h3>Hello World #2</h3>
+ * </div>
+ * <div class="tabs__content tf vr" id="tab3">
+ *   <h3>Hello World #3</h3>
+ * </div>
+ * <div class="tabs__content tf vr" id="tab4">
+ *   <h3>Hello World #4</h3>
+ * </div>
  *
- * @author    Olivier Bossel <olivier.bossel@gmail.com>
+ * @author    Olivier Bossel <olivier.bossel@gmail.com> (https://olivierbossel.com)
  */
 /**
  * Print out the bare and style component css
@@ -5297,14 +5622,1112 @@ blockquote:last-child {
   right: 0;
 }
 
-.tabs__item {
+/**
+		 * @name 	```.form-input```
+		 * @styleguide 		Forms / Input
+		 * @example 	html
+		 * <input class="form-input" placeholder="Hello world" />
+		 */
+.form-input {
+  font-family: "Helvetica Neue", Helvetica, Verdana, Arial, sans-serif;
+  font-weight: normal;
+  border-radius: 0em;
+  padding: 0 1.4em;
+  height: 2.6em;
+}
+
+.form-input:not(input):not(select) {
+  padding: 0.8em 1.4em;
+}
+
+.form-input::-webkit-contacts-auto-fill-button {
+  visibility: hidden;
+  display: none !important;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+}
+
+.form-input::-ms-clear {
+  display: none;
+}
+
+/**
+		 * @name 	```.form-select```
+		 * @styleguide 		Forms / Select
+		 * @example 	html
+		 * <select class="form-select">
+		 * 	<option>Value 1</option>
+		 * 	<option>Value 2</option>
+		 * 	<option>Value 3</option>
+		 * </select>
+		 */
+.form-select {
+  font-family: "Helvetica Neue", Helvetica, Verdana, Arial, sans-serif;
+  font-weight: normal;
+  background-size: 9px 6px;
+  background-position: right center;
+  background-origin: content-box;
+  background-repeat: no-repeat;
+  background-color: white;
+  border-radius: 0em;
+  padding: 0 1.4em;
+  height: 2.6em;
+}
+
+.form-select:not(input):not(select) {
+  padding: 0.8em 1.4em;
+}
+
+.form-select::-ms-expand {
+  display: none;
+}
+
+/**
+		 * @name 	```.form-textarea```
+		 * @styleguide 		Forms / Textarea
+		 * @example 	html
+		 * <textarea class="form-textarea" placeholder="Hello world"></textarea>
+		 */
+.form-textarea {
+  font-family: "Helvetica Neue", Helvetica, Verdana, Arial, sans-serif;
+  font-weight: normal;
+  padding: 0.8em 1.4em;
+  display: inline-block;
+}
+
+/**
+		 * @name 	```.form-group```
+		 * @styleguide 		Forms / Group
+		 * @example 	html
+		 * <div class="form-group">
+		 * 	<input class="form-input" placeholder="Hello world" />
+		 * 	<input class="btn" type="submit" value="Ok" />
+		 * </div>
+		 */
+.form-group {
+  display: flex !important;
+  flex: 1 !important;
+  align-items: center !important;
+}
+
+.form-group > * {
+  flex: 1;
+}
+
+.form-group > input[type="submit"],
+.form-group > input[type="checkbox"],
+.form-group > input[type="radio"],
+.form-group > button,
+.form-group .form-addon {
+  flex: 0;
+}
+
+/**
+		 * @name 	```.form-addon```
+		 * @styleguide 		Forms / Addon
+		 * @example 	html
+		 * <div class="form-group">
+		 * 	<div class="form-addon">
+		 *  	Email
+		 *  </div>
+		 * 	<input class="form-input" placeholder="john.doe@gmail.com" />
+		 * 	<input class="btn" type="submit" value="Ok" />
+		 * </div>
+		 */
+.form-addon {
+  border-radius: 0em;
+  padding: 0 1.4em;
+  height: 2.6em;
+}
+
+.form-addon:not(input):not(select) {
+  padding: 0.8em 1.4em;
+}
+
+.form-addon.vr,
+.vr .form-addon {
+  margin-bottom: 1em;
+}
+
+/**
+			 * @name 	<span class="c-default">Default</span> ```.form-input--default```
+			 * @styleguide 		Forms / Input
+			 * @example 	html
+			 * <input class="form-input form-input--default" placeholder="Hello world" />
+			 */
+.form-input {
+  color: #848e91;
+  transition: border 0.1s ease-in-out 0s, outline-color 0s linear 0s;
+  outline-color: black;
+  border-color: rgba(132, 142, 145, 0.1);
+}
+
+.form-input::-webkit-input-placeholder {
+  color: rgba(132, 142, 145, 0.4);
+}
+
+.form-input:-moz-placeholder {
+  color: rgba(132, 142, 145, 0.4);
+}
+
+.form-input::-moz-placeholder {
+  color: rgba(132, 142, 145, 0.4);
+}
+
+.form-input:-ms-input-placeholder {
+  color: rgba(132, 142, 145, 0.4);
+}
+
+.input--placeholder {
+  color: rgba(132, 142, 145, 0.4);
+}
+
+.form-input:disabled {
+  opacity: 0.5;
+}
+
+[data-input-activator]:focus ~ .form-input,
+[data-input-activator]:checked ~ .form-input, .form-input:hover:not(:disabled) {
+  border-bottom-color: rgba(132, 142, 145, 0.6);
+}
+
+[data-input-activator]:focus ~ .form-input,
+[data-input-activator]:checked ~ .form-input, .form-input:focus:not(:disabled), .form-input.active:not(:disabled) {
+  border-color: rgba(132, 142, 145, 0.6);
+}
+
+.form-input[dirty]:invalid, .form-input[dirty][invalid] {
+  border-color: #d9534f !important;
+}
+
+/**
+			 * @name 	<span class="c-default">Default</span> ```.form-select--default```
+			 * @styleguide 		Forms / Select
+			 * @example 	html
+			 * <select class="form-select form-select--default">
+			 * 	<option>Value 1</option>
+			 * 	<option>Value 2</option>
+			 * 	<option>Value 3</option>
+			 * </select>
+			 */
+.form-select {
+  color: #848e91;
+  transition: border 0.1s ease-in-out 0s, outline-color 0s linear 0s;
+  outline-color: black;
+  border-color: rgba(132, 142, 145, 0.1);
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' version='1.1' width='32' height='24' viewBox='0 0 32 24'%3E%3Cpolygon points='0,0 32,0 16,24' style='fill:%23848e91'%3E%3C/polygon%3E%3C/svg%3E");
+}
+
+.form-select::-webkit-input-placeholder {
+  color: rgba(132, 142, 145, 0.4);
+}
+
+.form-select:-moz-placeholder {
+  color: rgba(132, 142, 145, 0.4);
+}
+
+.form-select::-moz-placeholder {
+  color: rgba(132, 142, 145, 0.4);
+}
+
+.form-select:-ms-input-placeholder {
+  color: rgba(132, 142, 145, 0.4);
+}
+
+.input--placeholder {
+  color: rgba(132, 142, 145, 0.4);
+}
+
+.form-select:disabled {
+  opacity: 0.5;
+}
+
+[data-input-activator]:focus ~ .form-select,
+[data-input-activator]:checked ~ .form-select, .form-select:hover:not(:disabled) {
+  border-bottom-color: rgba(132, 142, 145, 0.6);
+}
+
+[data-input-activator]:focus ~ .form-select,
+[data-input-activator]:checked ~ .form-select, .form-select:focus:not(:disabled), .form-select.active:not(:disabled) {
+  border-color: rgba(132, 142, 145, 0.6);
+}
+
+.form-select[dirty]:invalid, .form-select[dirty][invalid] {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' version='1.1' width='32' height='24' viewBox='0 0 32 24'%3E%3Cpolygon points='0,0 32,0 16,24' style='fill:%23d9534f'%3E%3C/polygon%3E%3C/svg%3E");
+}
+
+.form-select[dirty]:invalid, .form-select[dirty][invalid] {
+  border-color: #d9534f !important;
+}
+
+/**
+			 * @name 	<span class="c-default">Default</span> ```.form-textarea--default```
+			 * @styleguide 		Forms / Textarea
+			 * @example 	html
+			 * <textarea class="form-textarea form-textarea--default" placeholder="Hello world"></textarea>
+			 */
+.form-textarea {
+  color: #848e91;
+  transition: border 0.1s ease-in-out 0s, outline-color 0s linear 0s;
+  outline-color: black;
+  border-color: rgba(132, 142, 145, 0.1);
+}
+
+.form-textarea::-webkit-input-placeholder {
+  color: rgba(132, 142, 145, 0.4);
+}
+
+.form-textarea:-moz-placeholder {
+  color: rgba(132, 142, 145, 0.4);
+}
+
+.form-textarea::-moz-placeholder {
+  color: rgba(132, 142, 145, 0.4);
+}
+
+.form-textarea:-ms-input-placeholder {
+  color: rgba(132, 142, 145, 0.4);
+}
+
+.input--placeholder {
+  color: rgba(132, 142, 145, 0.4);
+}
+
+.form-textarea:disabled {
+  opacity: 0.5;
+}
+
+[data-input-activator]:focus ~ .form-textarea,
+[data-input-activator]:checked ~ .form-textarea, .form-textarea:hover:not(:disabled) {
+  border-bottom-color: rgba(132, 142, 145, 0.6);
+}
+
+[data-input-activator]:focus ~ .form-textarea,
+[data-input-activator]:checked ~ .form-textarea, .form-textarea:focus:not(:disabled), .form-textarea.active:not(:disabled) {
+  border-color: rgba(132, 142, 145, 0.6);
+}
+
+.form-textarea[dirty]:invalid, .form-textarea[dirty][invalid] {
+  border-color: #d9534f !important;
+}
+
+/**
+			 * @name 	<span class="c-default">Default</span> ```.form-addon--default```
+			 * @styleguide 		Forms / Addon
+			 * @example 	html
+			 * <div class="form-group">
+			 * 	<div class="form-addon form-addon--default">
+			 *  	Email
+			 *  </div>
+			 * 	<input class="form-input" placeholder="john.doe@gmail.com" />
+			 * 	<input class="btn" type="submit" value="Ok" />
+			 * </div>
+			 */
+.form-addon {
+  border-color: rgba(132, 142, 145, 0.1);
+  background-color: rgba(132, 142, 145, 0.08);
+  color: #6b7477;
+}
+
+[data-input-activator]:focus ~ .form-addon,
+[data-input-activator]:checked ~ .form-addon, .form-addon:hover:not(:disabled) {
+  border-bottom-color: rgba(132, 142, 145, 0.6);
+}
+
+[data-input-activator]:focus ~ .form-addon,
+[data-input-activator]:checked ~ .form-addon, .form-addon:focus:not(:disabled), .form-addon.active:not(:disabled) {
+  border-color: rgba(132, 142, 145, 0.6);
+}
+
+/**
+			 * @name 	<span class="c-primary">Primary</span> ```.form-input--primary```
+			 * @styleguide 		Forms / Input
+			 * @example 	html
+			 * <input class="form-input form-input--primary" placeholder="Hello world" />
+			 */
+.form-input--primary {
+  color: #848e91;
+  transition: border 0.1s ease-in-out 0s, outline-color 0s linear 0s;
+  outline-color: black;
+  border-color: rgba(242, 188, 43, 0.1);
+}
+
+.form-input--primary::-webkit-input-placeholder {
+  color: rgba(132, 142, 145, 0.4);
+}
+
+.form-input--primary:-moz-placeholder {
+  color: rgba(132, 142, 145, 0.4);
+}
+
+.form-input--primary::-moz-placeholder {
+  color: rgba(132, 142, 145, 0.4);
+}
+
+.form-input--primary:-ms-input-placeholder {
+  color: rgba(132, 142, 145, 0.4);
+}
+
+.input--placeholder {
+  color: rgba(132, 142, 145, 0.4);
+}
+
+.form-input--primary:disabled {
+  opacity: 0.5;
+}
+
+[data-input-activator]:focus ~ .form-input--primary,
+[data-input-activator]:checked ~ .form-input--primary, .form-input--primary:hover:not(:disabled) {
+  border-bottom-color: rgba(242, 188, 43, 0.6);
+}
+
+[data-input-activator]:focus ~ .form-input--primary,
+[data-input-activator]:checked ~ .form-input--primary, .form-input--primary:focus:not(:disabled), .form-input--primary.active:not(:disabled) {
+  border-color: rgba(242, 188, 43, 0.6);
+}
+
+.form-input--primary[dirty]:invalid, .form-input--primary[dirty][invalid] {
+  border-color: #d9534f !important;
+}
+
+/**
+			 * @name 	<span class="c-primary">Primary</span> ```.form-select--primary```
+			 * @styleguide 		Forms / Select
+			 * @example 	html
+			 * <select class="form-select form-select--primary">
+			 * 	<option>Value 1</option>
+			 * 	<option>Value 2</option>
+			 * 	<option>Value 3</option>
+			 * </select>
+			 */
+.form-select--primary {
+  color: #848e91;
+  transition: border 0.1s ease-in-out 0s, outline-color 0s linear 0s;
+  outline-color: black;
+  border-color: rgba(242, 188, 43, 0.1);
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' version='1.1' width='32' height='24' viewBox='0 0 32 24'%3E%3Cpolygon points='0,0 32,0 16,24' style='fill:%23f2bc2b'%3E%3C/polygon%3E%3C/svg%3E");
+}
+
+.form-select--primary::-webkit-input-placeholder {
+  color: rgba(132, 142, 145, 0.4);
+}
+
+.form-select--primary:-moz-placeholder {
+  color: rgba(132, 142, 145, 0.4);
+}
+
+.form-select--primary::-moz-placeholder {
+  color: rgba(132, 142, 145, 0.4);
+}
+
+.form-select--primary:-ms-input-placeholder {
+  color: rgba(132, 142, 145, 0.4);
+}
+
+.input--placeholder {
+  color: rgba(132, 142, 145, 0.4);
+}
+
+.form-select--primary:disabled {
+  opacity: 0.5;
+}
+
+[data-input-activator]:focus ~ .form-select--primary,
+[data-input-activator]:checked ~ .form-select--primary, .form-select--primary:hover:not(:disabled) {
+  border-bottom-color: rgba(242, 188, 43, 0.6);
+}
+
+[data-input-activator]:focus ~ .form-select--primary,
+[data-input-activator]:checked ~ .form-select--primary, .form-select--primary:focus:not(:disabled), .form-select--primary.active:not(:disabled) {
+  border-color: rgba(242, 188, 43, 0.6);
+}
+
+.form-select--primary[dirty]:invalid, .form-select--primary[dirty][invalid] {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' version='1.1' width='32' height='24' viewBox='0 0 32 24'%3E%3Cpolygon points='0,0 32,0 16,24' style='fill:%23d9534f'%3E%3C/polygon%3E%3C/svg%3E");
+}
+
+.form-select--primary[dirty]:invalid, .form-select--primary[dirty][invalid] {
+  border-color: #d9534f !important;
+}
+
+/**
+			 * @name 	<span class="c-primary">Primary</span> ```.form-textarea--primary```
+			 * @styleguide 		Forms / Textarea
+			 * @example 	html
+			 * <textarea class="form-textarea form-textarea--primary" placeholder="Hello world"></textarea>
+			 */
+.form-textarea--primary {
+  color: #848e91;
+  transition: border 0.1s ease-in-out 0s, outline-color 0s linear 0s;
+  outline-color: black;
+  border-color: rgba(242, 188, 43, 0.1);
+}
+
+.form-textarea--primary::-webkit-input-placeholder {
+  color: rgba(132, 142, 145, 0.4);
+}
+
+.form-textarea--primary:-moz-placeholder {
+  color: rgba(132, 142, 145, 0.4);
+}
+
+.form-textarea--primary::-moz-placeholder {
+  color: rgba(132, 142, 145, 0.4);
+}
+
+.form-textarea--primary:-ms-input-placeholder {
+  color: rgba(132, 142, 145, 0.4);
+}
+
+.input--placeholder {
+  color: rgba(132, 142, 145, 0.4);
+}
+
+.form-textarea--primary:disabled {
+  opacity: 0.5;
+}
+
+[data-input-activator]:focus ~ .form-textarea--primary,
+[data-input-activator]:checked ~ .form-textarea--primary, .form-textarea--primary:hover:not(:disabled) {
+  border-bottom-color: rgba(242, 188, 43, 0.6);
+}
+
+[data-input-activator]:focus ~ .form-textarea--primary,
+[data-input-activator]:checked ~ .form-textarea--primary, .form-textarea--primary:focus:not(:disabled), .form-textarea--primary.active:not(:disabled) {
+  border-color: rgba(242, 188, 43, 0.6);
+}
+
+.form-textarea--primary[dirty]:invalid, .form-textarea--primary[dirty][invalid] {
+  border-color: #d9534f !important;
+}
+
+/**
+			 * @name 	<span class="c-primary">Primary</span> ```.form-addon--primary```
+			 * @styleguide 		Forms / Addon
+			 * @example 	html
+			 * <div class="form-group">
+			 * 	<div class="form-addon form-addon--primary">
+			 *  	Email
+			 *  </div>
+			 * 	<input class="form-input" placeholder="john.doe@gmail.com" />
+			 * 	<input class="btn" type="submit" value="Ok" />
+			 * </div>
+			 */
+.form-addon--primary {
+  border-color: rgba(242, 188, 43, 0.1);
+  background-color: rgba(242, 188, 43, 0.08);
+  color: #dca40e;
+}
+
+[data-input-activator]:focus ~ .form-addon--primary,
+[data-input-activator]:checked ~ .form-addon--primary, .form-addon--primary:hover:not(:disabled) {
+  border-bottom-color: rgba(242, 188, 43, 0.6);
+}
+
+[data-input-activator]:focus ~ .form-addon--primary,
+[data-input-activator]:checked ~ .form-addon--primary, .form-addon--primary:focus:not(:disabled), .form-addon--primary.active:not(:disabled) {
+  border-color: rgba(242, 188, 43, 0.6);
+}
+
+/**
+			 * @name 	<span class="c-secondary">Secondary</span> ```.form-input--secondary```
+			 * @styleguide 		Forms / Input
+			 * @example 	html
+			 * <input class="form-input form-input--secondary" placeholder="Hello world" />
+			 */
+.form-input--secondary {
+  color: #848e91;
+  transition: border 0.1s ease-in-out 0s, outline-color 0s linear 0s;
+  outline-color: black;
+  border-color: rgba(43, 52, 56, 0.1);
+}
+
+.form-input--secondary::-webkit-input-placeholder {
+  color: rgba(132, 142, 145, 0.4);
+}
+
+.form-input--secondary:-moz-placeholder {
+  color: rgba(132, 142, 145, 0.4);
+}
+
+.form-input--secondary::-moz-placeholder {
+  color: rgba(132, 142, 145, 0.4);
+}
+
+.form-input--secondary:-ms-input-placeholder {
+  color: rgba(132, 142, 145, 0.4);
+}
+
+.input--placeholder {
+  color: rgba(132, 142, 145, 0.4);
+}
+
+.form-input--secondary:disabled {
+  opacity: 0.5;
+}
+
+[data-input-activator]:focus ~ .form-input--secondary,
+[data-input-activator]:checked ~ .form-input--secondary, .form-input--secondary:hover:not(:disabled) {
+  border-bottom-color: rgba(43, 52, 56, 0.6);
+}
+
+[data-input-activator]:focus ~ .form-input--secondary,
+[data-input-activator]:checked ~ .form-input--secondary, .form-input--secondary:focus:not(:disabled), .form-input--secondary.active:not(:disabled) {
+  border-color: rgba(43, 52, 56, 0.6);
+}
+
+.form-input--secondary[dirty]:invalid, .form-input--secondary[dirty][invalid] {
+  border-color: #d9534f !important;
+}
+
+/**
+			 * @name 	<span class="c-secondary">Secondary</span> ```.form-select--secondary```
+			 * @styleguide 		Forms / Select
+			 * @example 	html
+			 * <select class="form-select form-select--secondary">
+			 * 	<option>Value 1</option>
+			 * 	<option>Value 2</option>
+			 * 	<option>Value 3</option>
+			 * </select>
+			 */
+.form-select--secondary {
+  color: #848e91;
+  transition: border 0.1s ease-in-out 0s, outline-color 0s linear 0s;
+  outline-color: black;
+  border-color: rgba(43, 52, 56, 0.1);
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' version='1.1' width='32' height='24' viewBox='0 0 32 24'%3E%3Cpolygon points='0,0 32,0 16,24' style='fill:%232b3438'%3E%3C/polygon%3E%3C/svg%3E");
+}
+
+.form-select--secondary::-webkit-input-placeholder {
+  color: rgba(132, 142, 145, 0.4);
+}
+
+.form-select--secondary:-moz-placeholder {
+  color: rgba(132, 142, 145, 0.4);
+}
+
+.form-select--secondary::-moz-placeholder {
+  color: rgba(132, 142, 145, 0.4);
+}
+
+.form-select--secondary:-ms-input-placeholder {
+  color: rgba(132, 142, 145, 0.4);
+}
+
+.input--placeholder {
+  color: rgba(132, 142, 145, 0.4);
+}
+
+.form-select--secondary:disabled {
+  opacity: 0.5;
+}
+
+[data-input-activator]:focus ~ .form-select--secondary,
+[data-input-activator]:checked ~ .form-select--secondary, .form-select--secondary:hover:not(:disabled) {
+  border-bottom-color: rgba(43, 52, 56, 0.6);
+}
+
+[data-input-activator]:focus ~ .form-select--secondary,
+[data-input-activator]:checked ~ .form-select--secondary, .form-select--secondary:focus:not(:disabled), .form-select--secondary.active:not(:disabled) {
+  border-color: rgba(43, 52, 56, 0.6);
+}
+
+.form-select--secondary[dirty]:invalid, .form-select--secondary[dirty][invalid] {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' version='1.1' width='32' height='24' viewBox='0 0 32 24'%3E%3Cpolygon points='0,0 32,0 16,24' style='fill:%23d9534f'%3E%3C/polygon%3E%3C/svg%3E");
+}
+
+.form-select--secondary[dirty]:invalid, .form-select--secondary[dirty][invalid] {
+  border-color: #d9534f !important;
+}
+
+/**
+			 * @name 	<span class="c-secondary">Secondary</span> ```.form-textarea--secondary```
+			 * @styleguide 		Forms / Textarea
+			 * @example 	html
+			 * <textarea class="form-textarea form-textarea--secondary" placeholder="Hello world"></textarea>
+			 */
+.form-textarea--secondary {
+  color: #848e91;
+  transition: border 0.1s ease-in-out 0s, outline-color 0s linear 0s;
+  outline-color: black;
+  border-color: rgba(43, 52, 56, 0.1);
+}
+
+.form-textarea--secondary::-webkit-input-placeholder {
+  color: rgba(132, 142, 145, 0.4);
+}
+
+.form-textarea--secondary:-moz-placeholder {
+  color: rgba(132, 142, 145, 0.4);
+}
+
+.form-textarea--secondary::-moz-placeholder {
+  color: rgba(132, 142, 145, 0.4);
+}
+
+.form-textarea--secondary:-ms-input-placeholder {
+  color: rgba(132, 142, 145, 0.4);
+}
+
+.input--placeholder {
+  color: rgba(132, 142, 145, 0.4);
+}
+
+.form-textarea--secondary:disabled {
+  opacity: 0.5;
+}
+
+[data-input-activator]:focus ~ .form-textarea--secondary,
+[data-input-activator]:checked ~ .form-textarea--secondary, .form-textarea--secondary:hover:not(:disabled) {
+  border-bottom-color: rgba(43, 52, 56, 0.6);
+}
+
+[data-input-activator]:focus ~ .form-textarea--secondary,
+[data-input-activator]:checked ~ .form-textarea--secondary, .form-textarea--secondary:focus:not(:disabled), .form-textarea--secondary.active:not(:disabled) {
+  border-color: rgba(43, 52, 56, 0.6);
+}
+
+.form-textarea--secondary[dirty]:invalid, .form-textarea--secondary[dirty][invalid] {
+  border-color: #d9534f !important;
+}
+
+/**
+			 * @name 	<span class="c-secondary">Secondary</span> ```.form-addon--secondary```
+			 * @styleguide 		Forms / Addon
+			 * @example 	html
+			 * <div class="form-group">
+			 * 	<div class="form-addon form-addon--secondary">
+			 *  	Email
+			 *  </div>
+			 * 	<input class="form-input" placeholder="john.doe@gmail.com" />
+			 * 	<input class="btn" type="submit" value="Ok" />
+			 * </div>
+			 */
+.form-addon--secondary {
+  border-color: rgba(43, 52, 56, 0.1);
+  background-color: rgba(43, 52, 56, 0.08);
+  color: #15191b;
+}
+
+[data-input-activator]:focus ~ .form-addon--secondary,
+[data-input-activator]:checked ~ .form-addon--secondary, .form-addon--secondary:hover:not(:disabled) {
+  border-bottom-color: rgba(43, 52, 56, 0.6);
+}
+
+[data-input-activator]:focus ~ .form-addon--secondary,
+[data-input-activator]:checked ~ .form-addon--secondary, .form-addon--secondary:focus:not(:disabled), .form-addon--secondary.active:not(:disabled) {
+  border-color: rgba(43, 52, 56, 0.6);
+}
+
+/**
+		 * @name 	```.btn```
+		 * Lead paragraph styling
+		 * @styleguide 	Atoms / Buttons
+		 * @example 	html
+		 * <a class="btn">
+		 * 	Default button
+		 * </a>
+		 */
+.btn {
+  border-radius: 0em;
+  padding: 0.8em 1.4em;
+  height: 2.6em;
+}
+
+/**
+			* @name 	```.btn--block```
+			* Lead paragraph styling
+			* @styleguide 	Atoms / Buttons
+			* @example 	html
+			* <a class="btn btn--block">
+			* 	Block button
+			* </a>
+			*/
+.btn--block {
+  border-radius: 0em;
+  padding: 0.8em 1.4em;
+  height: 2.6em;
+  display: block;
+  width: 100%;
+}
+
+.btn {
+  transition: all 0.1s ease-in-out 0s, outline-color 0s linear 0s;
+  outline-color: black;
+  background-color: #848e91;
+  border-color: #848e91;
+  color: white;
+}
+
+.btn[active]:not(:disabled), .btn.active:not(:disabled), .btn:active:not(:disabled), .btn:hover:not(:disabled) {
+  background-color: #5f676a;
+  border-color: #5f676a;
+}
+
+.btn--link {
+  background-color: transparent !important;
+  color: #f2bc2b !important;
+  border-color: rgba(0, 0, 0, 0) !important;
+  position: relative;
+}
+
+.btn--link:after {
+  content: '';
+  position: absolute;
+  display: block;
+  bottom: 0.32em;
+  left: 50%;
+  height: .2em;
+  width: 0;
+  transform: translateX(-50%) translateY(0) translateZ(0);
+  transition: all 0.1s ease-in-out 0s, outline-color 0s linear 0s;
+  outline-color: black;
+  background: #f2bc2b;
+}
+
+.btn--link[active]:not(:disabled):after, .btn--link.active:not(:disabled):after, .btn--link:active:not(:disabled):after, .btn--link:hover:not(:disabled):after {
+  width: calc(100% - 2.8em);
+}
+
+/**
+			 * @name 	<span class="c-default">Default</span> ```.btn```
+			 * Default button
+			 * @styleguide 	Atoms / Buttons
+			 * @example 	html
+			 * <a class="btn btn--default">
+			 * 	Default button
+			 * </a>
+			 */
+.btn {
+  background-color: #848e91;
+  border-color: #848e91;
+  color: white;
+  /**
+					* @name 	<span class="c-default">Default</span> ```.btn--outline```
+					* Outline default button
+					* @styleguide 	Atoms / Buttons
+					* @example 	html
+					* <a class="btn btn--outline btn--default">
+					* 	Default outlined button
+					* </a>
+					*/
+  /**
+					* @name 	<span class="c-default">Default</span> ```.btn--link```
+					* Link default button
+					* @styleguide 	Atoms / Buttons
+					* @example 	html
+					* <a class="btn btn--link btn--default">
+					* 	Default link button
+					* </a>
+					*/
+  /**
+					* @name 	<span class="c-default">Default</span> ```.btn:disabled```
+					* Disabled default button
+					* @styleguide 	Atoms / Buttons
+					* @example 	html
+					* <button disabled class="btn btn--default">
+					* 	Default disabled button
+					* </button>
+					*/
+}
+
+.btn[active]:not(:disabled), .btn.active:not(:disabled), .btn:active:not(:disabled), .btn:hover:not(:disabled) {
+  background-color: #5f676a;
+  border-color: #5f676a;
+}
+
+.btn.btn--outline {
+  color: #848e91;
+  background-color: transparent;
+  border-color: #848e91;
+}
+
+.btn.btn--outline:active:not(:disabled), .btn.btn--outline:hover:not(:disabled), .btn.btn--outline.active:not(:disabled),
+:checked + .btn.btn--outline:not(:disabled) {
+  background-color: #848e91;
+  border-color: #848e91;
+  color: white;
+}
+
+.btn.btn--link {
+  background-color: transparent !important;
+  color: #848e91 !important;
+  border-color: rgba(0, 0, 0, 0) !important;
+  position: relative;
+}
+
+.btn.btn--link:after {
+  content: '';
+  position: absolute;
+  display: block;
+  bottom: 0.32em;
+  left: 50%;
+  height: .2em;
+  width: 0;
+  transform: translateX(-50%) translateY(0) translateZ(0);
+  transition: all 0.1s ease-in-out 0s, outline-color 0s linear 0s;
+  outline-color: black;
+  background: #848e91;
+}
+
+.btn.btn--link[active]:not(:disabled):after, .btn.btn--link.active:not(:disabled):after, .btn.btn--link:active:not(:disabled):after, .btn.btn--link:hover:not(:disabled):after {
+  width: calc(100% - 2.8em);
+}
+
+.btn.btn--disabled, .btn.btn:disabled {
+  background-color: #848e91;
+  border-color: #848e91;
+  color: white;
+  opacity: 0.5;
+  cursor: not-allowed !important;
+  pointer-events: none;
+}
+
+.btn.btn--disabled[active]:not(:disabled), .btn.btn--disabled.active:not(:disabled), .btn.btn--disabled:active:not(:disabled), .btn.btn--disabled:hover:not(:disabled), .btn.btn:disabled[active]:not(:disabled), .btn.btn:disabled.active:not(:disabled), .btn.btn:disabled:active:not(:disabled), .btn.btn:disabled:hover:not(:disabled) {
+  background-color: #5f676a;
+  border-color: #5f676a;
+}
+
+.btn--hover-default:hover {
+  background-color: #848e91;
+  border-color: #848e91;
+  color: white;
+}
+
+.btn--hover-default:hover[active]:not(:disabled), .btn--hover-default:hover.active:not(:disabled), .btn--hover-default:hover:active:not(:disabled), .btn--hover-default:hover:hover:not(:disabled) {
+  background-color: #5f676a;
+  border-color: #5f676a;
+}
+
+/**
+			 * @name 	<span class="c-primary">Primary</span> ```.btn```
+			 * Primary button
+			 * @styleguide 	Atoms / Buttons
+			 * @example 	html
+			 * <a class="btn btn--primary">
+			 * 	Primary button
+			 * </a>
+			 */
+.btn--primary {
+  background-color: #f2bc2b;
+  border-color: #f2bc2b;
+  color: white;
+  /**
+					* @name 	<span class="c-primary">Primary</span> ```.btn--outline```
+					* Outline primary button
+					* @styleguide 	Atoms / Buttons
+					* @example 	html
+					* <a class="btn btn--outline btn--primary">
+					* 	Primary outlined button
+					* </a>
+					*/
+  /**
+					* @name 	<span class="c-primary">Primary</span> ```.btn--link```
+					* Link primary button
+					* @styleguide 	Atoms / Buttons
+					* @example 	html
+					* <a class="btn btn--link btn--primary">
+					* 	Primary link button
+					* </a>
+					*/
+  /**
+					* @name 	<span class="c-primary">Primary</span> ```.btn:disabled```
+					* Disabled primary button
+					* @styleguide 	Atoms / Buttons
+					* @example 	html
+					* <button disabled class="btn btn--primary">
+					* 	Primary disabled button
+					* </button>
+					*/
+}
+
+.btn--primary[active]:not(:disabled), .btn--primary.active:not(:disabled), .btn--primary:active:not(:disabled), .btn--primary:hover:not(:disabled) {
+  background-color: #c4920c;
+  border-color: #c4920c;
+}
+
+.btn--primary.btn--outline {
+  color: #f2bc2b;
+  background-color: transparent;
+  border-color: #f2bc2b;
+}
+
+.btn--primary.btn--outline:active:not(:disabled), .btn--primary.btn--outline:hover:not(:disabled), .btn--primary.btn--outline.active:not(:disabled),
+:checked + .btn--primary.btn--outline:not(:disabled) {
+  background-color: #f2bc2b;
+  border-color: #f2bc2b;
+  color: white;
+}
+
+.btn--primary.btn--link {
+  background-color: transparent !important;
+  color: #f2bc2b !important;
+  border-color: rgba(0, 0, 0, 0) !important;
+  position: relative;
+}
+
+.btn--primary.btn--link:after {
+  content: '';
+  position: absolute;
+  display: block;
+  bottom: 0.32em;
+  left: 50%;
+  height: .2em;
+  width: 0;
+  transform: translateX(-50%) translateY(0) translateZ(0);
+  transition: all 0.1s ease-in-out 0s, outline-color 0s linear 0s;
+  outline-color: black;
+  background: #f2bc2b;
+}
+
+.btn--primary.btn--link[active]:not(:disabled):after, .btn--primary.btn--link.active:not(:disabled):after, .btn--primary.btn--link:active:not(:disabled):after, .btn--primary.btn--link:hover:not(:disabled):after {
+  width: calc(100% - 2.8em);
+}
+
+.btn--primary.btn--disabled, .btn--primary.btn:disabled {
+  background-color: #f2bc2b;
+  border-color: #f2bc2b;
+  color: white;
+  opacity: 0.5;
+  cursor: not-allowed !important;
+  pointer-events: none;
+}
+
+.btn--primary.btn--disabled[active]:not(:disabled), .btn--primary.btn--disabled.active:not(:disabled), .btn--primary.btn--disabled:active:not(:disabled), .btn--primary.btn--disabled:hover:not(:disabled), .btn--primary.btn:disabled[active]:not(:disabled), .btn--primary.btn:disabled.active:not(:disabled), .btn--primary.btn:disabled:active:not(:disabled), .btn--primary.btn:disabled:hover:not(:disabled) {
+  background-color: #c4920c;
+  border-color: #c4920c;
+}
+
+.btn--hover-primary:hover {
+  background-color: #f2bc2b;
+  border-color: #f2bc2b;
+  color: white;
+}
+
+.btn--hover-primary:hover[active]:not(:disabled), .btn--hover-primary:hover.active:not(:disabled), .btn--hover-primary:hover:active:not(:disabled), .btn--hover-primary:hover:hover:not(:disabled) {
+  background-color: #c4920c;
+  border-color: #c4920c;
+}
+
+/**
+			 * @name 	<span class="c-secondary">Secondary</span> ```.btn```
+			 * Secondary button
+			 * @styleguide 	Atoms / Buttons
+			 * @example 	html
+			 * <a class="btn btn--secondary">
+			 * 	Secondary button
+			 * </a>
+			 */
+.btn--secondary {
+  background-color: #2b3438;
+  border-color: #2b3438;
+  color: white;
+  /**
+					* @name 	<span class="c-secondary">Secondary</span> ```.btn--outline```
+					* Outline secondary button
+					* @styleguide 	Atoms / Buttons
+					* @example 	html
+					* <a class="btn btn--outline btn--secondary">
+					* 	Secondary outlined button
+					* </a>
+					*/
+  /**
+					* @name 	<span class="c-secondary">Secondary</span> ```.btn--link```
+					* Link secondary button
+					* @styleguide 	Atoms / Buttons
+					* @example 	html
+					* <a class="btn btn--link btn--secondary">
+					* 	Secondary link button
+					* </a>
+					*/
+  /**
+					* @name 	<span class="c-secondary">Secondary</span> ```.btn:disabled```
+					* Disabled secondary button
+					* @styleguide 	Atoms / Buttons
+					* @example 	html
+					* <button disabled class="btn btn--secondary">
+					* 	Secondary disabled button
+					* </button>
+					*/
+}
+
+.btn--secondary[active]:not(:disabled), .btn--secondary.active:not(:disabled), .btn--secondary:active:not(:disabled), .btn--secondary:hover:not(:disabled) {
+  background-color: #0a0c0d;
+  border-color: #0a0c0d;
+}
+
+.btn--secondary.btn--outline {
+  color: #2b3438;
+  background-color: transparent;
+  border-color: #2b3438;
+}
+
+.btn--secondary.btn--outline:active:not(:disabled), .btn--secondary.btn--outline:hover:not(:disabled), .btn--secondary.btn--outline.active:not(:disabled),
+:checked + .btn--secondary.btn--outline:not(:disabled) {
+  background-color: #2b3438;
+  border-color: #2b3438;
+  color: white;
+}
+
+.btn--secondary.btn--link {
+  background-color: transparent !important;
+  color: #2b3438 !important;
+  border-color: rgba(0, 0, 0, 0) !important;
+  position: relative;
+}
+
+.btn--secondary.btn--link:after {
+  content: '';
+  position: absolute;
+  display: block;
+  bottom: 0.32em;
+  left: 50%;
+  height: .2em;
+  width: 0;
+  transform: translateX(-50%) translateY(0) translateZ(0);
+  transition: all 0.1s ease-in-out 0s, outline-color 0s linear 0s;
+  outline-color: black;
+  background: #2b3438;
+}
+
+.btn--secondary.btn--link[active]:not(:disabled):after, .btn--secondary.btn--link.active:not(:disabled):after, .btn--secondary.btn--link:active:not(:disabled):after, .btn--secondary.btn--link:hover:not(:disabled):after {
+  width: calc(100% - 2.8em);
+}
+
+.btn--secondary.btn--disabled, .btn--secondary.btn:disabled {
+  background-color: #2b3438;
+  border-color: #2b3438;
+  color: white;
+  opacity: 0.5;
+  cursor: not-allowed !important;
+  pointer-events: none;
+}
+
+.btn--secondary.btn--disabled[active]:not(:disabled), .btn--secondary.btn--disabled.active:not(:disabled), .btn--secondary.btn--disabled:active:not(:disabled), .btn--secondary.btn--disabled:hover:not(:disabled), .btn--secondary.btn:disabled[active]:not(:disabled), .btn--secondary.btn:disabled.active:not(:disabled), .btn--secondary.btn:disabled:active:not(:disabled), .btn--secondary.btn:disabled:hover:not(:disabled) {
+  background-color: #0a0c0d;
+  border-color: #0a0c0d;
+}
+
+.btn--hover-secondary:hover {
+  background-color: #2b3438;
+  border-color: #2b3438;
+  color: white;
+}
+
+.btn--hover-secondary:hover[active]:not(:disabled), .btn--hover-secondary:hover.active:not(:disabled), .btn--hover-secondary:hover:active:not(:disabled), .btn--hover-secondary:hover:hover:not(:disabled) {
+  background-color: #0a0c0d;
+  border-color: #0a0c0d;
+}
+
+.tabs__menu-item {
   display: inline-block;
   position: relative;
   top: 1px;
   z-index: 1;
 }
 
-.tabs__item a {
+.tabs__menu-item a {
   border-top-left-radius: 0em;
   border-top-right-radius: 0em;
   display: inline-block;
@@ -5323,11 +6746,11 @@ blockquote:last-child {
   display: block;
 }
 
-.tabs {
-  border-bottom: 1px solid rgba(132, 142, 145, 0.3);
+.tabs .tabs__menu {
+  border-bottom: 1px solid rgba(132, 142, 145, 0.1);
 }
 
-.tabs .tabs__item a {
+.tabs .tabs__menu-item a {
   color: #848e91;
   border: 1px solid rgba(0, 0, 0, 0);
   border-bottom: none !important;
@@ -5335,21 +6758,50 @@ blockquote:last-child {
   outline-color: black;
 }
 
-.tabs .tabs__item a:hover, .tabs .tabs__item a.active {
-  border: 1px solid rgba(132, 142, 145, 0.3);
+.tabs .tabs__menu-item a:hover, .tabs .tabs__menu-item a.active {
+  border: 1px solid rgba(132, 142, 145, 0.1);
   background-color: #f2f3f3;
 }
 
-.tabs ~ .tabs__content {
-  border: solid 1px rgba(132, 142, 145, 0.3);
+.tabs .tabs__content {
+  border: solid 1px rgba(132, 142, 145, 0.1);
   border-top: none !important;
 }
 
-.tabs--primary {
-  border-bottom: 1px solid rgba(242, 188, 43, 0.3);
+.tabs--filled .tabs .tabs__content {
+  background-color: #f2f3f3;
 }
 
-.tabs--primary .tabs__item a {
+.tabs.tabs--filled .tabs__content {
+  background-color: #f2f3f3;
+  border: solid 1px rgba(132, 142, 145, 0.1);
+}
+
+.tabs.tabs--opaque .tabs__menu-item a {
+  color: #848e91;
+  border: 1px solid rgba(0, 0, 0, 0);
+  border-bottom: none !important;
+  transition: all 0.1s ease-in-out 0s, outline-color 0s linear 0s;
+  outline-color: black;
+}
+
+.tabs.tabs--opaque .tabs__menu-item a:hover, .tabs.tabs--opaque .tabs__menu-item a.active {
+  color: white;
+  border: 1px solid #848e91;
+  background-color: #848e91;
+}
+
+.tabs.tabs--opaque .tabs__content {
+  background-color: #848e91;
+  border: solid 1px #848e91;
+  color: white;
+}
+
+.tabs--primary .tabs__menu {
+  border-bottom: 1px solid rgba(242, 188, 43, 0.1);
+}
+
+.tabs--primary .tabs__menu-item a {
   color: #f2bc2b;
   border: 1px solid rgba(0, 0, 0, 0);
   border-bottom: none !important;
@@ -5357,21 +6809,50 @@ blockquote:last-child {
   outline-color: black;
 }
 
-.tabs--primary .tabs__item a:hover, .tabs--primary .tabs__item a.active {
-  border: 1px solid rgba(242, 188, 43, 0.3);
+.tabs--primary .tabs__menu-item a:hover, .tabs--primary .tabs__menu-item a.active {
+  border: 1px solid rgba(242, 188, 43, 0.1);
   background-color: #fef7e7;
 }
 
-.tabs--primary ~ .tabs__content {
-  border: solid 1px rgba(242, 188, 43, 0.3);
+.tabs--primary .tabs__content {
+  border: solid 1px rgba(242, 188, 43, 0.1);
   border-top: none !important;
 }
 
-.tabs--secondary {
-  border-bottom: 1px solid rgba(43, 52, 56, 0.3);
+.tabs--filled .tabs--primary .tabs__content {
+  background-color: #fef7e7;
 }
 
-.tabs--secondary .tabs__item a {
+.tabs--primary.tabs--filled .tabs__content {
+  background-color: #fef7e7;
+  border: solid 1px rgba(242, 188, 43, 0.1);
+}
+
+.tabs--primary.tabs--opaque .tabs__menu-item a {
+  color: #f2bc2b;
+  border: 1px solid rgba(0, 0, 0, 0);
+  border-bottom: none !important;
+  transition: all 0.1s ease-in-out 0s, outline-color 0s linear 0s;
+  outline-color: black;
+}
+
+.tabs--primary.tabs--opaque .tabs__menu-item a:hover, .tabs--primary.tabs--opaque .tabs__menu-item a.active {
+  color: white;
+  border: 1px solid #f2bc2b;
+  background-color: #f2bc2b;
+}
+
+.tabs--primary.tabs--opaque .tabs__content {
+  background-color: #f2bc2b;
+  border: solid 1px #f2bc2b;
+  color: white;
+}
+
+.tabs--secondary .tabs__menu {
+  border-bottom: 1px solid rgba(43, 52, 56, 0.1);
+}
+
+.tabs--secondary .tabs__menu-item a {
   color: #2b3438;
   border: 1px solid rgba(0, 0, 0, 0);
   border-bottom: none !important;
@@ -5379,14 +6860,43 @@ blockquote:last-child {
   outline-color: black;
 }
 
-.tabs--secondary .tabs__item a:hover, .tabs--secondary .tabs__item a.active {
-  border: 1px solid rgba(43, 52, 56, 0.3);
+.tabs--secondary .tabs__menu-item a:hover, .tabs--secondary .tabs__menu-item a.active {
+  border: 1px solid rgba(43, 52, 56, 0.1);
   background-color: #f1f3f4;
 }
 
-.tabs--secondary ~ .tabs__content {
-  border: solid 1px rgba(43, 52, 56, 0.3);
+.tabs--secondary .tabs__content {
+  border: solid 1px rgba(43, 52, 56, 0.1);
   border-top: none !important;
+}
+
+.tabs--filled .tabs--secondary .tabs__content {
+  background-color: #f1f3f4;
+}
+
+.tabs--secondary.tabs--filled .tabs__content {
+  background-color: #f1f3f4;
+  border: solid 1px rgba(43, 52, 56, 0.1);
+}
+
+.tabs--secondary.tabs--opaque .tabs__menu-item a {
+  color: #2b3438;
+  border: 1px solid rgba(0, 0, 0, 0);
+  border-bottom: none !important;
+  transition: all 0.1s ease-in-out 0s, outline-color 0s linear 0s;
+  outline-color: black;
+}
+
+.tabs--secondary.tabs--opaque .tabs__menu-item a:hover, .tabs--secondary.tabs--opaque .tabs__menu-item a.active {
+  color: white;
+  border: 1px solid #2b3438;
+  background-color: #2b3438;
+}
+
+.tabs--secondary.tabs--opaque .tabs__content {
+  background-color: #2b3438;
+  border: solid 1px #2b3438;
+  color: white;
 }
 
 body {
