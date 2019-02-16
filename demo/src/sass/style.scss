@@ -1,5 +1,7 @@
 @import 'node_modules/coffeekraken-sugar/index';
 @import 'node_modules/coffeekraken-s-typography-component/index';
+@import 'node_modules/coffeekraken-s-button-component/index';
+@import 'node_modules/coffeekraken-s-form-component/index';
 @import '../../../index';
 
 @include s-setup(());
@@ -7,6 +9,8 @@
 @include s-classes();
 
 @include s-typography-classes();
+@include s-form-classes();
+@include s-button-classes();
 
 @include s-tabs-classes();
 
