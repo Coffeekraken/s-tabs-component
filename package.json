@@ -1,6 +1,6 @@
 {
   "name": "coffeekraken-s-tabs-component",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Create nice and customizable tabs",
   "main": "dist/index.js",
   "homepage": "http://coffeekraken.io",
@@ -79,7 +79,7 @@
   },
   "dependencies": {
     "@babel/plugin-transform-react-jsx": "^7.3.0",
-    "coffeekraken-sugar": "^1.0.64"
+    "coffeekraken-sugar": "^1.0.68"
   },
   "devDependencies": {
     "@babel/cli": "^7.1.2",
