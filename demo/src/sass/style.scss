@@ -12,7 +12,9 @@
 @include s-form-classes();
 @include s-button-classes();
 
-@include s-tabs-classes();
+@include s-tabs-classes(
+  $colors: default primary secondary success error warning info
+);
 
 body {
 	padding: s-space(bigger);

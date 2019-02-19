@@ -540,6 +540,8 @@
  * - invert {Boolean}
  * - opacity {Percent}
  * - mix {Color}
+ * - lightness {Percent}
+ * - saturation {Percent}
  *
  * @param 		{String|Color} 		$color 				The color name or the color value to manipulate
  * @param 		{String|List} 			[$modifier=null] 	The color modifier to apply. Can be a registered modifier name or a modifier list
@@ -1666,6 +1668,7 @@
  * - sugar.size.abs.cover : ```.abs-cover```
  * - sugar.size.abs.contain : ```.abs-contain```
  * - sugar.size.abs.fit : ```.abs-fit```
+ * - sugar.media.object : ```.mo .mo--center .mo--end .mo__content```
  * - sugar.clearfix.default : ```.clearfix```
  * - sugar.clearfix.float : ```.clearfix-float```
  * - sugar.clearfix.micro : ```.clearfix-micro```
@@ -2207,6 +2210,38 @@
   height: 100%;
   top: 0;
   left: 0;
+}
+
+.mo {
+  /**
+	 * @name 		```.mo .mo--center .mo__content```
+	 * Famous media object class
+	 * @styleguide 	Helpers / Media object
+	 * @example 	html
+	 * <div class="mo">
+	 *   <div class="mo__content">
+	 *     <img src="https://source.unsplash.com/random/100x100" />
+	 *   </div>
+	 *   <div class="mo__content">
+	 *     <h2 class="h3">Hello World</h2>
+	 *     <p class="p">Phasellus fringilla aliquet justo eget pulvinar. Donec in justo leo.</p>
+	 *   </div>
+	 * </div>
+	 */
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.mo--center {
+  align-items: center;
+}
+
+.mo--end {
+  align-items: flex-end;
+}
+
+.mo__content {
+  flex: 0 1 auto;
 }
 
 .clearfix {
@@ -3164,147 +3199,41 @@ button {
  * Create nice and customizable tabs
  *
  * @example   html
- * <ul class="tabs">
- *   <li class="tabs__item">
- *     <a href="#tab1" class="active" is="s-activate" group="tabs">
- *        Tab #1
- *     </a>
- *   </li>
- *   <li class="tabs__item">
- *     <a href="#tab2" is="s-activate" group="tabs">
- *       Tab #2
- *     </a>
- *   </li>
- *   <li class="tabs__item">
- *     <a href="#tab3" is="s-activate" group="tabs">
- *       Tab #3
- *     </a>
- *   </li>
- *   <li class="tabs__item">
- *     <a href="#tab4" is="s-activate" group="tabs">
- *       Tab #4
- *     </a>
- *   </li>
- * </ul>
- * <div class="tabs__content tf vr" id="tab1">
- *   <h3>Hello World #1</h3>
- * </div>
- * <div class="tabs__content tf vr" id="tab2">
- *   <h3>Hello World #2</h3>
- * </div>
- * <div class="tabs__content tf vr" id="tab3">
- *   <h3>Hello World #3</h3>
- * </div>
- * <div class="tabs__content tf vr" id="tab4">
- *   <h3>Hello World #4</h3>
- * </div>
- *
- * @author    Olivier Bossel <olivier.bossel@gmail.com>
- */
-/**
- * Print out the menu bare and style component css
- * @param 	{List<Color>} 		[$color=default] 		The color to generate
- */
-/**
- * Print out the menu bare tabs css
- */
-/**
- * Print out the menu style tabs css
- * @param 	{Color} 		[$color=default] 		The color to generate
- */
-/**
- * Print out the bare menu item and style component css
- * @param 	{List<Color>} 		[$color=default] 		The color to generate
- */
-/**
- * Print out the bare tabs item css
- */
-/**
- * Print out the style tabs item css
- * @param 	{Color} 		[$color=default] 		The color to generate
- */
-/**
- * Print out the bare menu item opaque and style component css
- * @param 	{List<Color>} 		[$color=default] 		The color to generate
- */
-/**
- * Print out the bare tabs item opaque css
- */
-/**
- * Print out the style tabs item opaque css
- * @param 	{Color} 		[$color=default] 		The color to generate
- */
-/**
- * Print out the bare content and style component css
- * @param 	{List<Color>} 		[$color=default] 		The color to generate
- */
-/**
- * Print out the bare tabs content css
- */
-/**
- * Print out the style tabs content css
- * @param 	{Color} 		[$color=default] 		The color to generate
- */
-/**
- * Print out the bare content filled and style component css
- * @param 	{List<Color>} 		[$color=default] 		The color to generate
- */
-/**
- * Print out the bare tabs content filled css
- */
-/**
- * Print out the style tabs content filled css
- * @param 	{Color} 		[$color=default] 		The color to generate
- */
-/**
- * Print out the bare content opaque and style component css
- * @param 	{List<Color>} 		[$color=default] 		The color to generate
- */
-/**
- * Print out the bare tabs content opaque css
- */
-/**
- * Print out the style tabs content opaque css
- * @param 	{Color} 		[$color=default] 		The color to generate
- */
-/**
- * @name    STabsComponent
- * Create nice and customizable tabs
- *
- * @example   html
- * <ul class="tabs">
- *   <li class="tabs__item">
- *     <a href="#tab1" class="active" is="s-activate" group="tabs">
- *        Tab #1
- *     </a>
- *   </li>
- *   <li class="tabs__item">
- *     <a href="#tab2" is="s-activate" group="tabs">
- *       Tab #2
- *     </a>
- *   </li>
- *   <li class="tabs__item">
- *     <a href="#tab3" is="s-activate" group="tabs">
- *       Tab #3
- *     </a>
- *   </li>
- *   <li class="tabs__item">
- *     <a href="#tab4" is="s-activate" group="tabs">
- *       Tab #4
- *     </a>
- *   </li>
- * </ul>
- * <div class="tabs__content tf vr" id="tab1">
- *   <h3>Hello World #1</h3>
- * </div>
- * <div class="tabs__content tf vr" id="tab2">
- *   <h3>Hello World #2</h3>
- * </div>
- * <div class="tabs__content tf vr" id="tab3">
- *   <h3>Hello World #3</h3>
- * </div>
- * <div class="tabs__content tf vr" id="tab4">
- *   <h3>Hello World #4</h3>
+ * <div class="tabs">
+ *   <ul class="tabs__menu">
+ *     <li class="tabs__menu-item">
+ *       <a href="#tab1" class="active" is="s-activate" group="tabs">
+ *          Tab #1
+ *       </a>
+ *     </li>
+ *     <li class="tabs__menu-item">
+ *       <a href="#tab2" is="s-activate" group="tabs">
+ *         Tab #2
+ *       </a>
+ *     </li>
+ *     <li class="tabs__menu-item">
+ *       <a href="#tab3" is="s-activate" group="tabs">
+ *         Tab #3
+ *       </a>
+ *     </li>
+ *     <li class="tabs__menu-item">
+ *       <a href="#tab4" is="s-activate" group="tabs">
+ *         Tab #4
+ *       </a>
+ *     </li>
+ *   </ul>
+ *   <div class="tabs__content tf vr" id="tab1">
+ *     <h3>Hello World #1</h3>
+ *   </div>
+ *   <div class="tabs__content tf vr" id="tab2">
+ *     <h3>Hello World #2</h3>
+ *   </div>
+ *   <div class="tabs__content tf vr" id="tab3">
+ *     <h3>Hello World #3</h3>
+ *   </div>
+ *   <div class="tabs__content tf vr" id="tab4">
+ *     <h3>Hello World #4</h3>
+ *   </div>
  * </div>
  *
  * @author    Olivier Bossel <olivier.bossel@gmail.com> (https://olivierbossel.com)
@@ -6747,7 +6676,7 @@ blockquote:last-child {
 }
 
 .tabs .tabs__menu {
-  border-bottom: 1px solid rgba(132, 142, 145, 0.1);
+  border-bottom: 1px solid #e4e6e7;
 }
 
 .tabs .tabs__menu-item a {
@@ -6759,8 +6688,12 @@ blockquote:last-child {
 }
 
 .tabs .tabs__menu-item a:hover, .tabs .tabs__menu-item a.active {
-  border: 1px solid rgba(132, 142, 145, 0.1);
+  border: 1px solid #e4e6e7;
   background-color: #f2f3f3;
+}
+
+.tabs .tabs__menu-item a:active {
+  background-color: #e4e6e7;
 }
 
 .tabs .tabs__content {
@@ -6774,7 +6707,7 @@ blockquote:last-child {
 
 .tabs.tabs--filled .tabs__content {
   background-color: #f2f3f3;
-  border: solid 1px rgba(132, 142, 145, 0.1);
+  border: solid 1px #e4e6e7;
 }
 
 .tabs.tabs--opaque .tabs__menu-item a {
@@ -6791,14 +6724,18 @@ blockquote:last-child {
   background-color: #848e91;
 }
 
-.tabs.tabs--opaque .tabs__content {
+.tabs.tabs--opaque .tabs__menu-item a:active {
+  background-color: #778285;
+}
+
+.tabs.tabs--opaque.tabs--filled .tabs__content {
   background-color: #848e91;
   border: solid 1px #848e91;
   color: white;
 }
 
 .tabs--primary .tabs__menu {
-  border-bottom: 1px solid rgba(242, 188, 43, 0.1);
+  border-bottom: 1px solid #fcf0cf;
 }
 
 .tabs--primary .tabs__menu-item a {
@@ -6810,8 +6747,12 @@ blockquote:last-child {
 }
 
 .tabs--primary .tabs__menu-item a:hover, .tabs--primary .tabs__menu-item a.active {
-  border: 1px solid rgba(242, 188, 43, 0.1);
+  border: 1px solid #fcf0cf;
   background-color: #fef7e7;
+}
+
+.tabs--primary .tabs__menu-item a:active {
+  background-color: #fcf0cf;
 }
 
 .tabs--primary .tabs__content {
@@ -6825,7 +6766,7 @@ blockquote:last-child {
 
 .tabs--primary.tabs--filled .tabs__content {
   background-color: #fef7e7;
-  border: solid 1px rgba(242, 188, 43, 0.1);
+  border: solid 1px #fcf0cf;
 }
 
 .tabs--primary.tabs--opaque .tabs__menu-item a {
@@ -6842,14 +6783,18 @@ blockquote:last-child {
   background-color: #f2bc2b;
 }
 
-.tabs--primary.tabs--opaque .tabs__content {
+.tabs--primary.tabs--opaque .tabs__menu-item a:active {
+  background-color: #f1b413;
+}
+
+.tabs--primary.tabs--opaque.tabs--filled .tabs__content {
   background-color: #f2bc2b;
   border: solid 1px #f2bc2b;
   color: white;
 }
 
 .tabs--secondary .tabs__menu {
-  border-bottom: 1px solid rgba(43, 52, 56, 0.1);
+  border-bottom: 1px solid #e2e7e9;
 }
 
 .tabs--secondary .tabs__menu-item a {
@@ -6861,8 +6806,12 @@ blockquote:last-child {
 }
 
 .tabs--secondary .tabs__menu-item a:hover, .tabs--secondary .tabs__menu-item a.active {
-  border: 1px solid rgba(43, 52, 56, 0.1);
+  border: 1px solid #e2e7e9;
   background-color: #f1f3f4;
+}
+
+.tabs--secondary .tabs__menu-item a:active {
+  background-color: #e2e7e9;
 }
 
 .tabs--secondary .tabs__content {
@@ -6876,7 +6825,7 @@ blockquote:last-child {
 
 .tabs--secondary.tabs--filled .tabs__content {
   background-color: #f1f3f4;
-  border: solid 1px rgba(43, 52, 56, 0.1);
+  border: solid 1px #e2e7e9;
 }
 
 .tabs--secondary.tabs--opaque .tabs__menu-item a {
@@ -6893,9 +6842,249 @@ blockquote:last-child {
   background-color: #2b3438;
 }
 
-.tabs--secondary.tabs--opaque .tabs__content {
+.tabs--secondary.tabs--opaque .tabs__menu-item a:active {
+  background-color: #20272a;
+}
+
+.tabs--secondary.tabs--opaque.tabs--filled .tabs__content {
   background-color: #2b3438;
   border: solid 1px #2b3438;
+  color: white;
+}
+
+.tabs--success .tabs__menu {
+  border-bottom: 1px solid #dbf0db;
+}
+
+.tabs--success .tabs__menu-item a {
+  color: #5cb85c;
+  border: 1px solid rgba(0, 0, 0, 0);
+  border-bottom: none !important;
+  transition: all 0.1s ease-in-out 0s, outline-color 0s linear 0s;
+  outline-color: black;
+}
+
+.tabs--success .tabs__menu-item a:hover, .tabs--success .tabs__menu-item a.active {
+  border: 1px solid #dbf0db;
+  background-color: #edf7ed;
+}
+
+.tabs--success .tabs__menu-item a:active {
+  background-color: #dbf0db;
+}
+
+.tabs--success .tabs__content {
+  border: solid 1px rgba(92, 184, 92, 0.1);
+  border-top: none !important;
+}
+
+.tabs--filled .tabs--success .tabs__content {
+  background-color: #edf7ed;
+}
+
+.tabs--success.tabs--filled .tabs__content {
+  background-color: #edf7ed;
+  border: solid 1px #dbf0db;
+}
+
+.tabs--success.tabs--opaque .tabs__menu-item a {
+  color: #5cb85c;
+  border: 1px solid rgba(0, 0, 0, 0);
+  border-bottom: none !important;
+  transition: all 0.1s ease-in-out 0s, outline-color 0s linear 0s;
+  outline-color: black;
+}
+
+.tabs--success.tabs--opaque .tabs__menu-item a:hover, .tabs--success.tabs--opaque .tabs__menu-item a.active {
+  color: white;
+  border: 1px solid #5cb85c;
+  background-color: #5cb85c;
+}
+
+.tabs--success.tabs--opaque .tabs__menu-item a:active {
+  background-color: #4cae4c;
+}
+
+.tabs--success.tabs--opaque.tabs--filled .tabs__content {
+  background-color: #5cb85c;
+  border: solid 1px #5cb85c;
+  color: white;
+}
+
+.tabs--error .tabs__menu {
+  border-bottom: 1px solid #f6d6d5;
+}
+
+.tabs--error .tabs__menu-item a {
+  color: #d9534f;
+  border: 1px solid rgba(0, 0, 0, 0);
+  border-bottom: none !important;
+  transition: all 0.1s ease-in-out 0s, outline-color 0s linear 0s;
+  outline-color: black;
+}
+
+.tabs--error .tabs__menu-item a:hover, .tabs--error .tabs__menu-item a.active {
+  border: 1px solid #f6d6d5;
+  background-color: #faebea;
+}
+
+.tabs--error .tabs__menu-item a:active {
+  background-color: #f6d6d5;
+}
+
+.tabs--error .tabs__content {
+  border: solid 1px rgba(217, 83, 79, 0.1);
+  border-top: none !important;
+}
+
+.tabs--filled .tabs--error .tabs__content {
+  background-color: #faebea;
+}
+
+.tabs--error.tabs--filled .tabs__content {
+  background-color: #faebea;
+  border: solid 1px #f6d6d5;
+}
+
+.tabs--error.tabs--opaque .tabs__menu-item a {
+  color: #d9534f;
+  border: 1px solid rgba(0, 0, 0, 0);
+  border-bottom: none !important;
+  transition: all 0.1s ease-in-out 0s, outline-color 0s linear 0s;
+  outline-color: black;
+}
+
+.tabs--error.tabs--opaque .tabs__menu-item a:hover, .tabs--error.tabs--opaque .tabs__menu-item a.active {
+  color: white;
+  border: 1px solid #d9534f;
+  background-color: #d9534f;
+}
+
+.tabs--error.tabs--opaque .tabs__menu-item a:active {
+  background-color: #d43f3a;
+}
+
+.tabs--error.tabs--opaque.tabs--filled .tabs__content {
+  background-color: #d9534f;
+  border: solid 1px #d9534f;
+  color: white;
+}
+
+.tabs--warning .tabs__menu {
+  border-bottom: 1px solid #fbe9d0;
+}
+
+.tabs--warning .tabs__menu-item a {
+  color: #f0ad4e;
+  border: 1px solid rgba(0, 0, 0, 0);
+  border-bottom: none !important;
+  transition: all 0.1s ease-in-out 0s, outline-color 0s linear 0s;
+  outline-color: black;
+}
+
+.tabs--warning .tabs__menu-item a:hover, .tabs--warning .tabs__menu-item a.active {
+  border: 1px solid #fbe9d0;
+  background-color: #fdf4e7;
+}
+
+.tabs--warning .tabs__menu-item a:active {
+  background-color: #fbe9d0;
+}
+
+.tabs--warning .tabs__content {
+  border: solid 1px rgba(240, 173, 78, 0.1);
+  border-top: none !important;
+}
+
+.tabs--filled .tabs--warning .tabs__content {
+  background-color: #fdf4e7;
+}
+
+.tabs--warning.tabs--filled .tabs__content {
+  background-color: #fdf4e7;
+  border: solid 1px #fbe9d0;
+}
+
+.tabs--warning.tabs--opaque .tabs__menu-item a {
+  color: #f0ad4e;
+  border: 1px solid rgba(0, 0, 0, 0);
+  border-bottom: none !important;
+  transition: all 0.1s ease-in-out 0s, outline-color 0s linear 0s;
+  outline-color: black;
+}
+
+.tabs--warning.tabs--opaque .tabs__menu-item a:hover, .tabs--warning.tabs--opaque .tabs__menu-item a.active {
+  color: white;
+  border: 1px solid #f0ad4e;
+  background-color: #f0ad4e;
+}
+
+.tabs--warning.tabs--opaque .tabs__menu-item a:active {
+  background-color: #eea236;
+}
+
+.tabs--warning.tabs--opaque.tabs--filled .tabs__content {
+  background-color: #f0ad4e;
+  border: solid 1px #f0ad4e;
+  color: white;
+}
+
+.tabs--info .tabs__menu {
+  border-bottom: 1px solid #d1eafa;
+}
+
+.tabs--info .tabs__menu-item a {
+  color: #2199e8;
+  border: 1px solid rgba(0, 0, 0, 0);
+  border-bottom: none !important;
+  transition: all 0.1s ease-in-out 0s, outline-color 0s linear 0s;
+  outline-color: black;
+}
+
+.tabs--info .tabs__menu-item a:hover, .tabs--info .tabs__menu-item a.active {
+  border: 1px solid #d1eafa;
+  background-color: #e8f4fd;
+}
+
+.tabs--info .tabs__menu-item a:active {
+  background-color: #d1eafa;
+}
+
+.tabs--info .tabs__content {
+  border: solid 1px rgba(33, 153, 232, 0.1);
+  border-top: none !important;
+}
+
+.tabs--filled .tabs--info .tabs__content {
+  background-color: #e8f4fd;
+}
+
+.tabs--info.tabs--filled .tabs__content {
+  background-color: #e8f4fd;
+  border: solid 1px #d1eafa;
+}
+
+.tabs--info.tabs--opaque .tabs__menu-item a {
+  color: #2199e8;
+  border: 1px solid rgba(0, 0, 0, 0);
+  border-bottom: none !important;
+  transition: all 0.1s ease-in-out 0s, outline-color 0s linear 0s;
+  outline-color: black;
+}
+
+.tabs--info.tabs--opaque .tabs__menu-item a:hover, .tabs--info.tabs--opaque .tabs__menu-item a.active {
+  color: white;
+  border: 1px solid #2199e8;
+  background-color: #2199e8;
+}
+
+.tabs--info.tabs--opaque .tabs__menu-item a:active {
+  background-color: #168cd9;
+}
+
+.tabs--info.tabs--opaque.tabs--filled .tabs__content {
+  background-color: #2199e8;
+  border: solid 1px #2199e8;
   color: white;
 }
 
